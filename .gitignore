@@ -1,0 +1,6 @@
+snyk_data_file.json
+gl-dependency-scanning-report.json
+__pycache__/
+*.pyc
+snyk.sarif
+gl-sast-report.json

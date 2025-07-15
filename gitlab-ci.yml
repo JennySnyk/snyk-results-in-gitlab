@@ -1,0 +1,29 @@
+stages:
+  - test
+
+default:
+  image: python:3.10
+  before_script:
+    - apt-get update && apt-get install -y curl default-jdk maven
+    - curl -sL https://deb.nodesource.com/setup_18.x | bash -
+    - apt-get install -y nodejs
+    - npm install -g snyk
+    - snyk auth $SNYK_TOKEN
+
+snyk-sca-scan:
+  stage: test
+  script:
+    - snyk test --json-file-output=snyk_data_file.json || true
+    - python3 convert-snyk-to-gitlab.py
+  artifacts:
+    reports:
+      dependency_scanning: gl-dependency-scanning-report.json
+
+snyk-sast-scan:
+  stage: test
+  script:
+    - snyk code test --sarif-file-output=snyk.sarif || true
+    - python3 convert-snyk-sast-to-gitlab.py
+  artifacts:
+    reports:
+      sast: gl-sast-report.json
