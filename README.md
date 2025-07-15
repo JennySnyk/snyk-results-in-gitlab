@@ -55,3 +55,7 @@ Store your Snyk token securely in your GitLab project's CI/CD variables.
 ### 4. Run the Pipeline
 
 Commit and push the new files to your repository. The `snyk-sca-scan` and `snyk-sast-scan` jobs in your pipeline will automatically run. Upon completion, the vulnerability findings from both scans will appear in your GitLab project's **Security & Compliance > Vulnerability Report**.
+
+## Special Thanks
+
+A special thanks to Afik Regef, Staff Solution Engineer at Snyk, for his significant contributions to the scripts in this project.
