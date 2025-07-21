@@ -58,4 +58,4 @@ Commit and push the new files to your repository. The `snyk-sca-scan` and `snyk-
 
 ## Special Thanks
 
-A special thanks to Afik Regef, Staff Solution Engineer at Snyk, for his significant contributions to the scripts in this project.
+A special thanks to Afik Regev, Staff Solution Engineer at Snyk, for his significant contributions to the scripts in this project.
